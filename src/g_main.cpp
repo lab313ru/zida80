@@ -43,14 +43,12 @@
 #include <errno.h>
 #include <vector>
 #include "z80_debugwindow.h"
-#include "tracer.h"
 
 #include "ida_debmod.h"
 extern eventlist_t g_events;
 
 extern "C" void Read_To_68K_Space(int adr);
 extern void HexDestroyDialog();
-#define MAPHACK
 
 bool hook_trace = 1;
 

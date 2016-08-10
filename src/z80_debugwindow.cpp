@@ -23,7 +23,6 @@ z80DebugWindow::~z80DebugWindow()
 }
 
 extern "C" {
-    extern uint32 hook_pc;
 	void __fastcall z80TracePC(unsigned int pc);
 	void __fastcall z80TraceRead(uint32 start,uint32 size);
 	void __fastcall z80TraceWrite(uint32 start,uint32 size);
@@ -48,14 +47,14 @@ void z80DebugWindow::TracePC(int pc)
 {
     handled_ida_event = false;
 
-    if (last_pc != 0 && hook_pc != 0 && hook_pc < MAX_ROM_SIZE)
-        g_codemap[hook_pc] = std::pair<uint32, bool>(last_pc, true);
-
     prev_pc=last_pc;
-	last_pc=pc;
+	last_pc= pc;
+
+    if (last_pc != 0 && pc != 0 && pc < MAX_ROM_SIZE)
+        g_codemap[pc] = std::pair<uint32, bool>(prev_pc, true);
 	
 	bool br=false;
-	if (StepInto||StepOver==pc)
+	if (StepInto||StepOver== pc)
 	{
 		br=true;
 
@@ -63,16 +62,11 @@ void z80DebugWindow::TracePC(int pc)
         ev.eid = STEP;
         ev.pid = 1;
         ev.tid = 1;
-        ev.ea = last_pc;
+        ev.ea = pc;
         ev.handled = true;
         g_events.enqueue(ev, IN_BACK);
 
         handled_ida_event = true;
-
-		if (StepInto)
-			SetWhyBreak("StepInto");
-		else
-			SetWhyBreak("StepOver");
 	}
 
 	if (!br)
@@ -130,7 +124,10 @@ void z80DebugWindow::DoStepOver()
 	int pc=last_pc;
 
     if (is_call_insn(pc))
-	  StepOver=pc;
+    {
+        ea_t next_addr = get_first_cref_from(pc);
+        StepOver = (next_addr != BADADDR) ? next_addr : -1;
+    }
 	else
 	{
 		StepInto=true;

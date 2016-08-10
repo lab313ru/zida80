@@ -10,7 +10,7 @@
 
 #define VERSION "S0.26d"
 
-#define HOOKS_ENABLED
+//#define HOOKS_ENABLED
 
 /***************************************************************************/
 /*

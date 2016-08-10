@@ -108,7 +108,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(IDA_SDK)\lib\x86_win_vc_32\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>ida.lib;winmm.lib;comctl32.lib;libs\lua51.lib;libs\dx7\ddraw.lib;libs\dx7\dinput.lib;libs\dx7\dsound.lib;libs\dx7\dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ida.lib;winmm.lib;comctl32.lib;libs\dx7\ddraw.lib;libs\dx7\dinput.lib;libs\dx7\dsound.lib;libs\dx7\dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug64|Win32'">
@@ -127,7 +127,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(IDA_SDK)\lib\x86_win_vc_64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>ida.lib;winmm.lib;comctl32.lib;libs\lua51.lib;libs\dx7\ddraw.lib;libs\dx7\dinput.lib;libs\dx7\dsound.lib;libs\dx7\dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ida.lib;winmm.lib;comctl32.lib;libs\dx7\ddraw.lib;libs\dx7\dinput.lib;libs\dx7\dsound.lib;libs\dx7\dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -149,7 +149,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(IDA_SDK)\lib\x86_win_vc_32\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>ida.lib;winmm.lib;comctl32.lib;libs\lua51.lib;libs\dx7\ddraw.lib;libs\dx7\dinput.lib;libs\dx7\dsound.lib;libs\dx7\dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ida.lib;winmm.lib;comctl32.lib;libs\dx7\ddraw.lib;libs\dx7\dinput.lib;libs\dx7\dsound.lib;libs\dx7\dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release64|Win32'">
@@ -171,7 +171,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(IDA_SDK)\lib\x86_win_vc_64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>ida.lib;winmm.lib;comctl32.lib;libs\lua51.lib;libs\dx7\ddraw.lib;libs\dx7\dinput.lib;libs\dx7\dsound.lib;libs\dx7\dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ida.lib;winmm.lib;comctl32.lib;libs\dx7\ddraw.lib;libs\dx7\dinput.lib;libs\dx7\dsound.lib;libs\dx7\dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -387,7 +387,6 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\tracer.cpp" />
     <ClCompile Include="ida\ida_debug.cpp" />
     <ClCompile Include="ida\ida_plugin.cpp" />
     <ClCompile Include="mp3_dec\common.c" />
@@ -401,7 +400,6 @@
     <ClCompile Include="src\cd_aspi.cpp" />
     <ClCompile Include="src\cd_file.c" />
     <ClCompile Include="src\cd_sys.c" />
-    <ClCompile Include="src\corehooks.cpp" />
     <ClCompile Include="src\cpu_68k.c" />
     <ClCompile Include="src\cpu_sh2.c" />
     <ClCompile Include="src\cpu_z80.c" />
@@ -417,7 +415,6 @@
     <ClCompile Include="src\g_main.cpp" />
     <ClCompile Include="src\hexeditor.cpp" />
     <ClCompile Include="src\lc89510.c" />
-    <ClCompile Include="src\m68kd.c" />
     <ClCompile Include="src\movie.cpp" />
     <ClCompile Include="src\parsecmdline.cpp" />
     <ClCompile Include="src\pcm.c" />
@@ -449,7 +446,6 @@
     <ClCompile Include="zlib\zutil.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\tracer.h" />
     <ClInclude Include="ida\ida_debmod.h" />
     <ClInclude Include="ida\ida_debug.h" />
     <ClInclude Include="ida\ida_plugin.h" />
@@ -460,7 +456,6 @@
     <ClInclude Include="include\cd_aspi.h" />
     <ClInclude Include="include\cd_file.h" />
     <ClInclude Include="include\cd_sys.h" />
-    <ClInclude Include="include\corehooks.h" />
     <ClInclude Include="include\cpu_68k.h" />
     <ClInclude Include="include\cpu_sh2.h" />
     <ClInclude Include="include\cpu_z80.h" />
@@ -479,7 +474,6 @@
     <ClInclude Include="include\joypads.h" />
     <ClInclude Include="include\keycode.h" />
     <ClInclude Include="include\lc89510.h" />
-    <ClInclude Include="include\m68kd.h" />
     <ClInclude Include="include\mem_m68k.h" />
     <ClInclude Include="include\mem_s68k.h" />
     <ClInclude Include="include\mem_sh2.h" />

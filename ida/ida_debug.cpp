@@ -57,6 +57,7 @@ register_info_t registers[] =
     { "HL2", 0, RC_GENERAL, dt_word, NULL, 0 },
 
     { "IP", REGISTER_IP, RC_GENERAL, dt_word, NULL, 0 },
+    { "M68K_BANK", REGISTER_READONLY, RC_GENERAL, dt_dword, NULL, 0 },
 };
 
 static const char *register_classes[] =
@@ -215,8 +216,8 @@ static int idaapi start_process(const char *path,
     uint32 start = 0;
 
     z80DW.Breakpoints.clear();
-    Breakpoint b(bp_type::BP_PC, start & 0xFFFFFF, start & 0xFFFFFF, true, false);
-    z80DW.Breakpoints.push_back(b);
+    /*Breakpoint b(bp_type::BP_PC, start & 0xFFFFFF, start & 0xFFFFFF, true, false);
+    z80DW.Breakpoints.push_back(b);*/
 
     g_events.clear();
 
@@ -388,6 +389,7 @@ static int idaapi read_registers(thid_t tid, int clsmask, regval_t *values)
         values[R_HL2].ival = M_Z80.HL2.w.HL2;
 
         values[R_IP].ival = z80DW.last_pc;
+        values[R_BANK].ival = Bank_Z80;
     }
 
     return 1;
@@ -444,6 +446,12 @@ static int idaapi write_register(thid_t tid, int regidx, const regval_t *value)
         break;
     case R_HL2:
         M_Z80.HL2.w.HL2 = value->ival;
+        break;
+    case R_IP:
+        z80DW.last_pc = value->ival;
+        break;
+    case R_BANK:
+        Bank_Z80 = value->ival;
         break;
     }
 

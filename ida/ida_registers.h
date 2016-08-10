@@ -22,4 +22,5 @@ enum register_t
     R_HL2,
 
     R_IP,
+    R_BANK,
 };

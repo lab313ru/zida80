@@ -360,7 +360,7 @@ static int idaapi init(void)
         my_dbg = false;
 
         hook_to_notification_point(HT_DBG, hook_dbg, NULL);
-        hook_to_notification_point(HT_IDP, hook_idp, NULL);
+        //hook_to_notification_point(HT_IDP, hook_idp, NULL);
 
         print_version();
         return PLUGIN_KEEP;
@@ -376,7 +376,7 @@ static void idaapi term(void)
     {
         //term_plugin();
         unhook_from_notification_point(HT_DBG, hook_dbg, NULL);
-        unhook_from_notification_point(HT_IDP, hook_idp, NULL);
+        //unhook_from_notification_point(HT_IDP, hook_idp, NULL);
         plugin_inited = false;
         dbg_started = false;
     }

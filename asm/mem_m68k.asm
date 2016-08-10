@@ -19,10 +19,6 @@ section .data align=64
 	extern Memory_Control_Status
 	extern Cell_Conv_Tab
 	extern VDP_Current_Line
-	extern _hook_address
-	extern _hook_value
-	extern _hook_pc
-	extern _hook_write_byte
 
 	DECL Genesis_M68K_Read_Byte_Table
 		dd M68K_Read_Byte_Rom0,		; 0x000000 - 0x07FFFF
@@ -726,12 +722,6 @@ section .text align=64
 		push ebx
 		push ecx
 
-		mov ecx, [esp + 12]
-		mov eax, [esp + 16]
-		mov [_hook_pc], dword 0
-		mov [_hook_address],ecx
-		mov [_hook_value],eax
-		call _hook_write_byte
 		mov ecx, [esp + 12]
 		mov eax, [esp + 16]
 		mov ebx, ecx

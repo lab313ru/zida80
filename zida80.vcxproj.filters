@@ -101,9 +101,6 @@
     <ClCompile Include="src\cdda_mp3.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\corehooks.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\debugwindow.cpp">
       <Filter>src</Filter>
     </ClCompile>
@@ -182,9 +179,6 @@
     <ClCompile Include="src\pcm.c">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\m68kd.c">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\lc89510.c">
       <Filter>src</Filter>
     </ClCompile>
@@ -251,9 +245,6 @@
     <ClCompile Include="src\z80_debugwindow.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\tracer.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\resource.h">
@@ -275,9 +266,6 @@
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="include\cdda_mp3.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\corehooks.h">
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="include\cpu_68k.h">
@@ -329,9 +317,6 @@
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="include\lc89510.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\m68kd.h">
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="include\mem_m68k.h">
@@ -476,9 +461,6 @@
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="resource\resource.h" />
-    <ClInclude Include="include\tracer.h">
-      <Filter>include</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource\gens.rc">

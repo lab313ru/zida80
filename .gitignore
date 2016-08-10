@@ -1,0 +1,14 @@
+main68k.asm
+sub68k.asm
+*.obj
+*.tlog
+*.pdb
+*.iobj
+*.ipdb
+*.log
+*.res
+*.exe
+*.suo
+*.db
+*.opendb
+*.idb
